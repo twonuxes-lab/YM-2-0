@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>YUMATRIN MOBILE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Прелоадер -->
+    <div id="preloader">
+        <div class="loader-box">
+            <div class="loader-ring"></div>
+            <div class="loader-ring-inner"></div>
+        </div>
+        <div class="loader-text">ЗАГРУЗКА РЕСУРСОВ...</div>
+    </div>
+
+    <!-- Фоновые эффекты -->
+    <div class="bg-effects">
+        <div class="bg-orb orb-1"></div>
+        <div class="bg-orb orb-2"></div>
+    </div>
+
+    <div class="app-wrapper">
+        <header>
+            <div class="header-container">
+                <div class="logo" onclick="navigateTo('home')">
+                    <img src="logo.jpg" alt="YM" class="site-logo">
+                    <span class="logo-text"><span class="text-gold">YUMATRIN</span> <span class="text-orange">MOBILE</span></span>
+                </div>
+                
+                <nav class="desktop-nav">
+                    <a class="nav-link active" id="nav-home" onclick="navigateTo('home')">Главная</a>
+                    <a class="nav-link" id="nav-about" onclick="navigateTo('about')">О игре</a>
+                    <a class="nav-link" id="nav-servers" onclick="navigateTo('servers')">Сервера</a>
+                    <a class="nav-link" id="nav-download" onclick="navigateTo('download')">Скачать</a>
+                    <a class="nav-link" id="nav-donate" onclick="navigateTo('donate')">Поддержка</a>
+                    <a class="nav-link" id="nav-register" onclick="navigateTo('register')">Регистрация</a>
+                    <a class="nav-link" id="nav-socials" onclick="navigateTo('socials')">Соцсети</a>
+                    <a class="nav-link" id="nav-privacy" onclick="navigateTo('privacy')">Политика</a>
+                </nav>
+
+                <button class="burger-btn" id="burgerBtn">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </header>
+
+        <nav class="mobile-menu" id="mobileMenu">
+            <a onclick="navigateTo('home'); closeMobileMenu();">Главная</a>
+            <a onclick="navigateTo('about'); closeMobileMenu();">О игре</a>
+            <a onclick="navigateTo('servers'); closeMobileMenu();">Сервера</a>
+            <a onclick="navigateTo('download'); closeMobileMenu();">Скачать игру</a>
+            <a onclick="navigateTo('donate'); closeMobileMenu();">Поддержка</a>
+            <a onclick="navigateTo('register'); closeMobileMenu();">Регистрация</a>
+            <a onclick="navigateTo('socials'); closeMobileMenu();">Соцсети</a>
+            <a onclick="navigateTo('privacy'); closeMobileMenu();">Политика конфиденциальности</a>
+        </nav>
+
+        <main>
+            <!-- ГЛАВНАЯ С АНИМАЦИЕЙ ПЕЧАТНОЙ МАШИНКИ -->
+            <section class="page-section active" id="page-home">
+                <h1 class="hero-title"><span id="typing-text"></span><span class="cursor">|</span></h1>
+                <p class="hero-subtitle">Огромный мир, живая экономика, играй по своим правилам.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="navigateTo('download')">НАЧАТЬ ИГРАТЬ</button>
+                    <button class="btn-secondary" onclick="navigateTo('about')">УЗНАТЬ ОБ ИГРЕ</button>
+                </div>
+            </section>
+
+            <!-- ЭНЦИКЛОПЕДИЯ -->
+            <section class="page-section" id="page-about">
+                <div class="about-container">
+                    <div class="about-nav">
+                        <button class="about-tab active" onclick="switchAboutTab('about-welcome', this)">Добро пожаловать</button>
+                        <button class="about-tab" onclick="switchAboutTab('about-survival', this)">Выживание</button>
+                        <button class="about-tab" onclick="switchAboutTab('about-gov', this)">Гос. структуры</button>
+                        <button class="about-tab" onclick="switchAboutTab('about-crime', this)">Криминал (ОПГ)</button>
+                        <button class="about-tab" onclick="switchAboutTab('about-biz', this)">Бизнесы</button>
+                        <button class="about-tab" onclick="switchAboutTab('about-estate', this)">Недвижимость</button>
+                        <button class="about-tab" onclick="switchAboutTab('about-transport', this)">Транспорт</button>
+                    </div>
+
+                    <div class="about-content-area">
+                        <!-- Вкладка 1 -->
+                        <div class="about-pane active" id="about-welcome">
+                            <h2 class="section-title">МИР YUMATRIN MOBILE</h2>
+                            <p class="section-subtitle">Твоя вторая жизнь. Огромный открытый мир, где каждое решение имеет значение.</p>
+                            <div class="lore-grid">
+                                <div class="lore-card card-gold anim-slide-up">
+                                    <h3>Твоя роль в городе</h3>
+                                    <p>Ты не просто управляешь персонажем, ты проживаешь его жизнь. Общайся, заключай сделки, нарушай закон или защищай его. Начни с малого — устройся на работу, купи первую машину, сними квартиру.</p>
+                                </div>
+                                <div class="lore-card card-cyan anim-slide-up" style="animation-delay: 0.1s;">
+                                    <h3>Честная экономика</h3>
+                                    <p>В городе работает честная система. Все деньги зарабатываются трудом. Твой статус и богатство зависят только от твоих навыков и амбиций!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка 2 -->
+                        <div class="about-pane" id="about-survival">
+                            <h2 class="section-title">СИСТЕМА ВЫЖИВАНИЯ</h2>
+                            <div class="lore-grid">
+                                <div class="lore-card card-green">
+                                    <h3>Голод и Жажда</h3>
+                                    <p>У каждого игрока есть шкала сытости и водного баланса. Чтобы восстановить силы, посещайте кафе или покупайте еду. Свежая еда дает баффы (Кофе +5% выносливости).</p>
+                                </div>
+                                <div class="lore-card card-red">
+                                    <h3>Штрафы при истощении</h3>
+                                    <p>Если шкала падает до нуля, вы получаете урон (каждые 20 сек -1 HP). Броня не защищает от голода. Даже в супербронежилете вы умрете от истощения.</p>
+                                </div>
+                                <div class="lore-card card-green">
+                                    <h3>Здоровье и Броня</h3>
+                                    <p>Максимум 100 HP и 100 брони. Броню выдают силовые структуры, можно купить в оружейных магазинах или найти в арсеналах ОПГ.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка 3 -->
+                        <div class="about-pane" id="about-gov">
+                            <h2 class="section-title">ГОСУДАРСТВЕННЫЕ ОРГАНИЗАЦИИ</h2>
+                            <div class="lore-grid">
+                                <div class="lore-card card-gold">
+                                    <h3>Правительство</h3>
+                                    <p>Высший орган управления. Издают законы, управляют бюджетом. Здесь работают судьи, адвокаты и мэры.</p>
+                                </div>
+                                <div class="lore-card card-grey">
+                                    <h3>ФСБ</h3>
+                                    <p>Борьба с коррупцией, шпионажем и особо опасными преступниками. Только лучшие проходят строгий отбор.</p>
+                                </div>
+                                <div class="lore-card card-blue">
+                                    <h3>МВД</h3>
+                                    <p>Патрулирование, погони, задержания нарушителей. Включает в себя ППС и ДПС. Тесно работает с ФСБ и МЗ.</p>
+                                </div>
+                                <div class="lore-card card-green">
+                                    <h3>ВЧ</h3>
+                                    <p>Охрана стратегических объектов и содействие силовым структурам в экстренных ситуациях.</p>
+                                </div>
+                                <div class="lore-card card-red">
+                                    <h3>Минздрав</h3>
+                                    <p>Скорая помощь и больницы. Спасают жизни, выдают медсправки и реабилитируют после ранений.</p>
+                                </div>
+                                <div class="lore-card card-orange">
+                                    <h3>СМИ</h3>
+                                    <p>Журналисты берут интервью, делают репортажи и освещают жизнь города, создавая ролевые сюжеты.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка 4 -->
+                        <div class="about-pane" id="about-crime">
+                            <h2 class="section-title">КРИМИНАЛЬНЫЕ ОРГАНИЗАЦИИ</h2>
+                            <div class="lore-grid">
+                                <div class="lore-card card-pink">
+                                    <h3>Малиновское ОПГ</h3>
+                                    <p>Старейшая группировка. Славится традициями, жесткой дисциплиной и верностью коллективу.</p>
+                                </div>
+                                <div class="lore-card card-green">
+                                    <h3>Курганское ОПГ</h3>
+                                    <p>Дерзкая банда. Ставка на решительность, быструю реакцию и демонстрацию силы.</p>
+                                </div>
+                                <div class="lore-card card-blue">
+                                    <h3>Тальновское ОПГ</h3>
+                                    <p>Прагматичный подход. Действуют скрытно, чужими руками, тщательно анализируя конкурентов.</p>
+                                </div>
+                                <div class="lore-card card-indigo">
+                                    <h3>Сормовское ОПГ</h3>
+                                    <p>Контролируют портовую зону. Умеют договариваться, развивают деловые связи и контрабанду.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка 5 -->
+                        <div class="about-pane" id="about-biz">
+                            <h2 class="section-title">БИЗНЕСЫ</h2>
+                            <div class="lore-card card-cyan">
+                                <h3>Магазины и кафе</h3>
+                                <p>Открой магазин продуктов, уютное кафе или престижный ресторан. Нанимай сотрудников и развивай бизнес. Получай прибыль, расширяй ассортимент и создавай сеть.</p>
+                                <ul>
+                                    <li><b>Продуктовые магазины</b> — товары повседневного спроса.</li>
+                                    <li><b>Кофейни</b> — кофе дает бафф +5% к выносливости.</li>
+                                    <li><b>Рестораны</b> — обед дает бафф +2% к меткости.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка 6 -->
+                        <div class="about-pane" id="about-estate">
+                            <h2 class="section-title">НЕДВИЖИМОСТЬ</h2>
+                            <div class="lore-grid">
+                                <div class="lore-card card-cyan">
+                                    <h3>Квартиры</h3>
+                                    <p>Идеальный старт. Снимите уютную студию или купите просторную квартиру в центре.</p>
+                                </div>
+                                <div class="lore-card card-green">
+                                    <h3>Дома (Эконом)</h3>
+                                    <p>Небольшой домик за городом. Имеется небольшой двор и гараж для вашего первого авто.</p>
+                                </div>
+                                <div class="lore-card card-orange">
+                                    <h3>Дома (Средний класс)</h3>
+                                    <p>Просторные двухэтажные коттеджи. Огороженная территория и гараж на несколько машин.</p>
+                                </div>
+                                <div class="lore-card card-red">
+                                    <h3>Дома (Элитный класс)</h3>
+                                    <p>Роскошные особняки. Личный бассейн, панорамные окна и мраморная отделка. Для королей города.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка 7 -->
+                        <div class="about-pane" id="about-transport">
+                            <h2 class="section-title">ТРАНСПОРТ</h2>
+                            <div class="lore-grid">
+                                <div class="lore-card card-green">
+                                    <h3>Эконом-класс</h3>
+                                    <p>Доступные автомобили (Lada, Ford) для повседневных поездок. Идеальный выбор для старта.</p>
+                                </div>
+                                <div class="lore-card card-orange">
+                                    <h3>Средний класс</h3>
+                                    <p>Практичные и комфортные автомобили (Toyota, Kia). Отличный баланс между ценой и качеством.</p>
+                                </div>
+                                <div class="lore-card card-red">
+                                    <h3>Премиум-класс</h3>
+                                    <p>Дорогие модели (BMW, Audi, Lamborghini). Показывает статус владельца и привлекает внимание полиции.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- СЕРВЕРА -->
+            <section class="page-section" id="page-servers">
+                <h2 class="section-title">НАШИ СЕРВЕРА</h2>
+                <p class="section-subtitle">Выбирай сервер, который лучше подходит тебе</p>
+                
+                <div class="server-card anim-slide-up">
+                    <div class="server-header">
+                        <h3>01 СЕРВЕР</h3>
+                        <span class="badge pulse-badge">В РАЗРАБОТКЕ</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill"></div></div>
+                    <div class="server-stats">
+                        <span>Статус: Ожидание</span>
+                        <span>Онлайн: 0 / 1000</span>
+                    </div>
+                    <button class="btn-register-server" onclick="openModal('regModal')">РЕГИСТРАЦИЯ</button>
+                </div>
+            </section>
+
+            <!-- СКАЧАТЬ -->
+            <section class="page-section" id="page-download">
+                <h2 class="section-title">СКАЧАТЬ ИГРУ</h2>
+                <p class="section-subtitle">Выберите вашу платформу для установки</p>
+                
+                <div class="os-selector">
+                    <button class="os-tab active" onclick="switchOS('pc', this)">ПК</button>
+                    <button class="os-tab" onclick="switchOS('mobile', this)">Мобильные</button>
+                </div>
+
+                <div class="platform-grid" id="os-pc">
+                    <div class="platform-card anim-slide-up" onclick="openModal('dlModal')">
+                        <div class="platform-icon-wrap"><svg viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0V3.449zM10.95 1.933L24 0v11.551H10.95V1.933zM0 12.447h9.75v9.45L0 20.548v-8.101zM10.95 12.447H24V24l-13.05-1.933v-9.62z"/></svg></div>
+                        <div class="platform-name">Windows</div>
+                        <div class="platform-desc">Скачать лаунчер</div>
+                    </div>
+                    <div class="platform-card anim-slide-up" style="animation-delay: 0.1s;" onclick="openModal('dlModal')">
+                        <div class="platform-icon-wrap"><svg viewBox="0 0 24 24"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.4 12.36,4.16 13,3.5Z"/></svg></div>
+                        <div class="platform-name">macOS</div>
+                        <div class="platform-desc">Скачать лаунчер</div>
+                    </div>
+                </div>
+
+                <div class="platform-grid" id="os-mobile" style="display: none;">
+                    <div class="platform-card" onclick="openModal('dlModal')">
+                        <div class="platform-icon-wrap"><svg viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-1.0003 0-.5517.4482-1.0003.9993-1.0003.5511 0 .9993.4486.9993 1.0003 0 .5517-.4482 1.0003-.9993 1.0003zm-11.046 0c-.5511 0-.9993-.4486-.9993-1.0003 0-.5517.4482-1.0003.9993-1.0003.5511 0 .9993.4486.9993 1.0003 0 .5517-.4482 1.0003-.9993 1.0003zM6.477 8.205H17.523v6.832c0 .5252-.4242.95-.9488.95h-1.4123v2.1679c0 .5517-.4482 1.0003-.9993 1.0003-.5511 0-.9993-.4486-.9993-1.0003v-2.1679h-2.3372v2.1679c0 .5517-.4482 1.0003-.9993 1.0003-.5511 0-.9993-.4486-.9993-1.0003v-2.1679H7.4258c-.5246 0-.9488-.4248-.9488-.95V8.205zM12 2.25c-2.2513 0-4.3083 1.1654-5.5239 2.9804l-.2448.3744h11.5374l-.2448-.3744C16.3083 3.4154 14.2513 2.25 12 2.25z"/></svg></div>
+                        <div class="platform-name">Android</div>
+                        <div class="platform-desc">Google Play / RuStore</div>
+                    </div>
+                    <div class="platform-card" onclick="openModal('dlModal')">
+                        <div class="platform-icon-wrap"><svg viewBox="0 0 24 24"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.4 12.36,4.16 13,3.5Z"/></svg></div>
+                        <div class="platform-name">iOS</div>
+                        <div class="platform-desc">App Store</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ДОНАТ -->
+            <section class="page-section" id="page-donate">
+                <h2 class="section-title">ПОДДЕРЖКА ПРОЕКТА</h2>
+                <p class="section-subtitle">Выбери набор и поддержи разработку</p>
+                
+                <div class="donate-grid">
+                    <div class="donate-card anim-slide-up" onclick="openModal('donateModal')">
+                        <div class="badge-x2">x2 ДОНАТ</div>
+                        <div class="donate-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"/></svg></div>
+                        <div class="donate-amount">1000 YM</div>
+                        <div class="donate-price">300 ₽</div>
+                    </div>
+                    <div class="donate-card anim-slide-up" style="animation-delay: 0.1s;" onclick="openModal('donateModal')">
+                        <div class="badge-x2">x2 ДОНАТ</div><div class="badge-percent">+5%</div>
+                        <div class="donate-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"/></svg></div>
+                        <div class="donate-amount">2500 YM</div>
+                        <div class="donate-price">700 ₽</div>
+                    </div>
+                    <div class="donate-card anim-slide-up" style="animation-delay: 0.2s;" onclick="openModal('donateModal')">
+                        <div class="badge-x2">x2 ДОНАТ</div><div class="badge-percent">+10%</div>
+                        <div class="donate-icon"><svg viewBox="0 0 24 24"><path d="M21 10h-8l-2-2H5c-1.1 0-2 .9-2 2v5c0 1.1.9 2 2 2h6l2-2h8v-5zm-11 5H5v-5h5l2 2v3z"/></svg></div>
+                        <div class="donate-amount">5000 YM</div>
+                        <div class="donate-price">1200 ₽</div>
+                    </div>
+                    <div class="donate-card anim-slide-up" style="animation-delay: 0.3s;" onclick="openModal('donateModal')">
+                        <div class="badge-x2">x2 ДОНАТ</div><div class="badge-percent">+15%</div>
+                        <div class="donate-icon"><svg viewBox="0 0 24 24"><path d="M12.16 15.72L5.05 8.61 7.88 5.78l4.28 4.28 4.28-4.28 2.83 2.83-7.11 7.11zM12 2L2 12l10 10 10-10L12 2z"/></svg></div>
+                        <div class="donate-amount">10 000 YM</div>
+                        <div class="donate-price">2500 ₽</div>
+                    </div>
+                    <div class="donate-card anim-slide-up" style="animation-delay: 0.4s;" onclick="openModal('donateModal')">
+                        <div class="badge-x2">x2 ДОНАТ</div><div class="badge-percent">+20%</div>
+                        <div class="donate-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg></div>
+                        <div class="donate-amount">15 000 YM</div>
+                        <div class="donate-price">4000 ₽</div>
+                    </div>
+                    <div class="donate-card anim-slide-up" style="animation-delay: 0.5s;" onclick="openModal('donateModal')">
+                        <div class="badge-x2">x2 ДОНАТ</div><div class="badge-percent max-percent">+25% МАКС</div>
+                        <div class="donate-icon"><svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg></div>
+                        <div class="donate-amount">20 000 YM</div>
+                        <div class="donate-price">6000 ₽</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- РЕГИСТРАЦИЯ -->
+            <section class="page-section" id="page-register">
+                <h2 class="section-title">РЕГИСТРАЦИЯ</h2>
+                <p class="section-subtitle">Создай аккаунт для игры</p>
+                
+                <div class="server-card anim-slide-up" style="max-width: 450px; text-align: center;">
+                    <button class="btn-register-server" onclick="openModal('regModal')">СОЗДАТЬ АККАУНТ</button>
+                </div>
+            </section>
+
+            <!-- СОЦСЕТИ -->
+            <section class="page-section" id="page-socials">
+                <h2 class="section-title">МЫ В СОЦСЕТЯХ</h2>
+                <p class="section-subtitle">Подписывайся на новости проекта</p>
+                
+                <div class="social-grid">
+                    <div class="social-card yt anim-slide-up" onclick="openModal('ytModal')">
+                        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        <div class="social-name">YouTube</div>
+                    </div>
+                    <a href="https://www.tiktok.com/@yumatrin.mobile" target="_blank" class="social-card tt anim-slide-up" style="animation-delay: 0.1s;">
+                        <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.6-1.58-1.01-.06 2.92-.02 5.84-.07 8.76-.04 1.57-.5 3.14-1.42 4.42-1.4 1.96-3.72 3.1-6.08 3.06-2.23-.02-4.4-.95-5.95-2.5-1.45-1.45-2.23-3.42-2.17-5.46.03-2.17 1-4.27 2.69-5.64 1.71-1.38 4.05-1.85 6.15-1.21v4.17c-1.07-.34-2.26-.2-3.22.39-1.02.61-1.68 1.7-1.73 2.88-.06 1.3.55 2.57 1.55 3.35.96.74 2.23.92 3.35.49 1.04-.4 1.85-1.27 2.15-2.35.14-.51.17-1.05.17-1.58 0-4.63.03-9.26.04-13.89z"/></svg>
+                        <div class="social-name">TikTok</div>
+                    </a>
+                    <a href="https://t.me/yumatrin" target="_blank" class="social-card tg anim-slide-up" style="animation-delay: 0.2s;">
+                        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                        <div class="social-name">Telegram</div>
+                    </a>
+                    <a href="https://discord.gg/jCbyPWFbF" target="_blank" class="social-card ds anim-slide-up" style="animation-delay: 0.3s;">
+                        <svg viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/></svg>
+                        <div class="social-name">Discord</div>
+                    </a>
+                    <a href="https://vk.ru/club234286674" target="_blank" class="social-card vk anim-slide-up" style="animation-delay: 0.4s;">
+                        <svg viewBox="0 0 24 24"><path d="M13.162 18.994c.609 0 .858-.406.851-1.068-.025-1.198.129-1.689.744-1.785.452-.069 1.258.502 2.386 1.894.558.708 1.003.997 1.686.997h2.278c.624 0 .928-.335.799-.982-.163-.853-1.291-2.55-2.85-4.166-1.472-1.518-1.472-1.518-.198-3.206 1.809-2.37 2.408-3.81 2.408-4.242 0-.436-.247-.614-.751-.614h-2.172c-.567 0-.832.245-1.011.704 0 0-1.01 2.505-2.432 4.112-.55.632-.861.836-1.151.836-.203 0-.341-.152-.341-.773V6.617c0-.601-.134-.878-.641-.878H9.93c-.383 0-.614.209-.614.482 0 .515.76.63.838 2.108v3.068c0 .743-.132.884-.448.884-.444 0-1.688-1.858-2.459-3.993-.259-.726-.514-.998-1.08-.998H3.917c-.568 0-.698.245-.698.704 0 .573 1.315 3.653 3.458 6.94 1.834 2.748 4.076 4.242 6.485 4.242z"/></svg>
+                        <div class="social-name">ВКонтакте</div>
+                    </a>
+                    <a href="https://vk.ru/yumatrinmedia" target="_blank" class="social-card vk anim-slide-up" style="animation-delay: 0.5s;">
+                        <svg viewBox="0 0 24 24"><path d="M13.162 18.994c.609 0 .858-.406.851-1.068-.025-1.198.129-1.689.744-1.785.452-.069 1.258.502 2.386 1.894.558.708 1.003.997 1.686.997h2.278c.624 0 .928-.335.799-.982-.163-.853-1.291-2.55-2.85-4.166-1.472-1.518-1.472-1.518-.198-3.206 1.809-2.37 2.408-3.81 2.408-4.242 0-.436-.247-.614-.751-.614h-2.172c-.567 0-.832.245-1.011.704 0 0-1.01 2.505-2.432 4.112-.55.632-.861.836-1.151.836-.203 0-.341-.152-.341-.773V6.617c0-.601-.134-.878-.641-.878H9.93c-.383 0-.614.209-.614.482 0 .515.76.63.838 2.108v3.068c0 .743-.132.884-.448.884-.444 0-1.688-1.858-2.459-3.993-.259-.726-.514-.998-1.08-.998H3.917c-.568 0-.698.245-.698.704 0 .573 1.315 3.653 3.458 6.94 1.834 2.748 4.076 4.242 6.485 4.242z"/></svg>
+                        <div class="social-name">Медиа ВК</div>
+                    </a>
+                    <a href="https://vk.ru/yumatrintechnical" target="_blank" class="social-card vk anim-slide-up" style="animation-delay: 0.6s;">
+                        <svg viewBox="0 0 24 24"><path d="M13.162 18.994c.609 0 .858-.406.851-1.068-.025-1.198.129-1.689.744-1.785.452-.069 1.258.502 2.386 1.894.558.708 1.003.997 1.686.997h2.278c.624 0 .928-.335.799-.982-.163-.853-1.291-2.55-2.85-4.166-1.472-1.518-1.472-1.518-.198-3.206 1.809-2.37 2.408-3.81 2.408-4.242 0-.436-.247-.614-.751-.614h-2.172c-.567 0-.832.245-1.011.704 0 0-1.01 2.505-2.432 4.112-.55.632-.861.836-1.151.836-.203 0-.341-.152-.341-.773V6.617c0-.601-.134-.878-.641-.878H9.93c-.383 0-.614.209-.614.482 0 .515.76.63.838 2.108v3.068c0 .743-.132.884-.448.884-.444 0-1.688-1.858-2.459-3.993-.259-.726-.514-.998-1.08-.998H3.917c-.568 0-.698.245-.698.704 0 .573 1.315 3.653 3.458 6.94 1.834 2.748 4.076 4.242 6.485 4.242z"/></svg>
+                        <div class="social-name">Техподдержка ВК</div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ПОЛИТИКА -->
+            <section class="page-section" id="page-privacy">
+                <div class="privacy-container">
+                    <h2 class="section-title" style="font-size: 2rem;">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</h2>
+                    <h3 class="privacy-subtitle">YUMATRIN MOBILE</h3>
+                    <p class="privacy-meta">Дата вступления в силу: 29 сентября 2026 года<br>Владелец проекта: YUMATRIN GAMES</p>
+
+                    <div class="privacy-text">
+                        <p>Настоящая Политика конфиденциальности регулирует порядок сбора, использования, хранения и защиты информации пользователей игрового проекта YUMATRIN MOBILE, принадлежащего команде YUMATRIN GAMES.</p>
+                        <p>Используя игру, игровой аккаунт, официальный Discord-сервер или иные сервисы проекта, пользователь подтверждает, что ознакомился с настоящей Политикой конфиденциальности.</p>
+
+                        <h3>1. ОБЩИЕ ПОЛОЖЕНИЯ</h3>
+                        <p>1.1. YUMATRIN GAMES уважает право пользователей на конфиденциальность и принимает разумные меры для защиты информации, связанной с использованием YUMATRIN MOBILE.</p>
+                        <p>1.2. Настоящая политика распространяется на информацию, которая может быть получена в процессе:</p>
+                        <ul>
+                            <li>регистрации и использования игрового аккаунта;</li>
+                            <li>подключения к игровым серверам;</li>
+                            <li>использования игрового клиента;</li>
+                            <li>взаимодействия с официальными ресурсами проекта;</li>
+                            <li>обращения в службу поддержки;</li>
+                            <li>участия в официальном Discord-сообществе проекта.</li>
+                        </ul>
+                        <p>1.3. Проект не запрашивает у пользователя информацию, которая не требуется для функционирования соответствующих сервисов, за исключением случаев, когда пользователь добровольно предоставляет её самостоятельно.</p>
+
+                        <h3>2. КАКИЕ ДАННЫЕ МОГУТ СОБИРАТЬСЯ</h3>
+                        <p>В зависимости от используемых пользователем функций проекта могут обрабатываться следующие категории информации.</p>
+                        <p><b>2.1. IP-адрес</b><br>При подключении к игровым серверам технически может фиксироваться IP-адрес пользователя.<br>IP-адрес может использоваться для:</p>
+                        <ul>
+                            <li>обеспечения безопасности серверов;</li>
+                            <li>предотвращения мошенничества и злоупотреблений;</li>
+                            <li>выявления попыток обхода блокировок;</li>
+                            <li>защиты от атак на инфраструктуру проекта;</li>
+                            <li>ведения технических журналов.</li>
+                        </ul>
+                        <p>IP-адрес не используется для публичного раскрытия личности пользователя.</p>
+                        
+                        <p><b>2.2. Данные игрового аккаунта</b><br>В рамках функционирования YUMATRIN MOBILE могут обрабатываться данные игрового аккаунта, включая:</p>
+                        <ul>
+                            <li>игровой никнейм;</li>
+                            <li>идентификатор игрового аккаунта;</li>
+                            <li>данные о персонаже;</li>
+                            <li>игровую статистику;</li>
+                            <li>историю игровых действий;</li>
+                            <li>информацию о наказаниях и нарушениях правил проекта;</li>
+                            <li>технические данные, необходимые для функционирования аккаунта.</li>
+                        </ul>
+
+                        <p><b>2.3. Данные устройства</b><br>Для обеспечения стабильной работы игры и диагностики технических проблем могут обрабатываться определённые технические сведения об устройстве пользователя.<br>К ним могут относиться:</p>
+                        <ul>
+                            <li>модель устройства;</li>
+                            <li>версия операционной системы;</li>
+                            <li>версия игрового клиента;</li>
+                            <li>технические параметры, необходимые для работы игры;</li>
+                            <li>сведения о сбоях и ошибках.</li>
+                        </ul>
+                        <p>Проект не требует предоставления доступа к личным фотографиям, контактам, сообщениям или другим личным файлам устройства, если такой доступ непосредственно не предусмотрен отдельной функцией приложения.</p>
+
+                        <h3>3. ЦЕЛИ ОБРАБОТКИ ДАННЫХ</h3>
+                        <p>Полученная информация может использоваться исключительно в целях, связанных с функционированием и безопасностью проекта, включая:</p>
+                        <ul>
+                            <li>предоставление доступа к игровому серверу;</li>
+                            <li>создание и обслуживание игровых аккаунтов;</li>
+                            <li>сохранение игрового прогресса;</li>
+                            <li>обеспечение безопасности;</li>
+                            <li>предотвращение мошенничества;</li>
+                            <li>предотвращение использования стороннего программного обеспечения и иных способов нечестной игры;</li>
+                            <li>выявление нарушений правил проекта;</li>
+                            <li>рассмотрение жалоб и обращений;</li>
+                            <li>техническую поддержку пользователей;</li>
+                            <li>диагностику ошибок и сбоев;</li>
+                            <li>улучшение стабильности и производительности игры;</li>
+                            <li>защиту инфраструктуры YUMATRIN GAMES.</li>
+                        </ul>
+
+                        <h3>4. ИГРОВЫЕ ЛОГИ</h3>
+                        <p>В целях обеспечения безопасности и контроля работы проекта могут сохраняться технические журналы (логи).<br>Логи могут содержать:</p>
+                        <ul>
+                            <li>IP-адрес;</li>
+                            <li>идентификатор игрового аккаунта;</li>
+                            <li>дату и время подключения;</li>
+                            <li>сведения о действиях аккаунта;</li>
+                            <li>техническую информацию о соединении;</li>
+                            <li>информацию об ошибках и сбоях.</li>
+                        </ul>
+                        <p>Доступ к подобной информации предоставляется только уполномоченным представителям YUMATRIN GAMES в пределах их обязанностей.</p>
+
+                        <h3>5. ПЕРЕДАЧА ДАННЫХ ТРЕТЬИМ ЛИЦАМ</h3>
+                        <p>YUMATRIN GAMES не осуществляет продажу пользовательских данных третьим лицам.</p>
+                        <p>Доступ к определённой технической информации может предоставляться поставщикам инфраструктуры и технических сервисов, если это необходимо для функционирования игры, серверов или связанных с ними систем.</p>
+                        <p>В случаях, предусмотренных применимым законодательством, информация может быть предоставлена уполномоченным государственным органам на основании соответствующего законного требования.</p>
+
+                        <h3>6. DISCORD</h3>
+                        <p>YUMATRIN MOBILE имеет официальное Discord-сообщество.<br>Использование Discord осуществляется в соответствии с правилами и политикой конфиденциальности Discord.</p>
+                        <p>При взаимодействии пользователя с Discord-сервером проекта могут обрабатываться данные, которые предоставляет и обрабатывает сама платформа Discord, включая Discord ID, имя пользователя и сведения, связанные с использованием Discord.</p>
+                        <p>YUMATRIN GAMES не контролирует правила обработки данных, применяемые компанией Discord, и рекомендует пользователям самостоятельно ознакомиться с соответствующими документами Discord.</p>
+
+                        <h3>7. ПЛАТЕЖИ И ПОКУПКИ</h3>
+                        <p>На момент вступления настоящей Политики в силу функции доната и внутриигровых покупок в YUMATRIN MOBILE не активированы.</p>
+                        <p>В связи с этим YUMATRIN GAMES на текущем этапе не осуществляет сбор и обработку банковских реквизитов пользователей непосредственно через игровые покупки.</p>
+                        <p>При запуске системы доната настоящая Политика конфиденциальности может быть дополнена положениями, регулирующими обработку платежной информации и использование соответствующих платежных сервисов.</p>
+
+                        <h3>8. ЗАЩИТА ИНФОРМАЦИИ</h3>
+                        <p>YUMATRIN GAMES принимает разумные технические и организационные меры для предотвращения:</p>
+                        <ul>
+                            <li>несанкционированного доступа;</li>
+                            <li>изменения;</li>
+                            <li>распространения;</li>
+                            <li>уничтожения;</li>
+                            <li>утечки пользовательской информации.</li>
+                        </ul>
+                        <p>При этом ни один способ хранения или передачи информации через Интернет не может гарантировать абсолютную безопасность данных.</p>
+
+                        <h3>9. ХРАНЕНИЕ ДАННЫХ</h3>
+                        <p>Информация хранится в течение периода, необходимого для достижения целей, указанных в настоящей Политике, либо в течение срока, предусмотренного применимым законодательством.</p>
+                        <p>После прекращения необходимости в хранении определённые данные могут быть удалены, обезличены или сохранены в случаях, когда дальнейшее хранение необходимо для выполнения законных обязательств или защиты прав проекта.</p>
+
+                        <h3>10. ПРАВА ПОЛЬЗОВАТЕЛЯ</h3>
+                        <p>В зависимости от применимого законодательства пользователь может иметь право:</p>
+                        <ul>
+                            <li>запросить информацию о хранящихся о нём данных;</li>
+                            <li>запросить исправление неточной информации;</li>
+                            <li>запросить удаление определённых данных;</li>
+                            <li>ограничить обработку данных в предусмотренных законом случаях;</li>
+                            <li>обратиться с вопросом относительно обработки персональной информации.</li>
+                        </ul>
+                        <p>Для реализации соответствующего права пользователь может обратиться к администрации YUMATRIN MOBILE через официальные каналы связи проекта.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div style="margin-bottom: 10px;">
+                <a onclick="navigateTo('privacy')" style="color: var(--text-muted); text-decoration: none; margin: 0 10px; cursor: pointer; transition: 0.3s;" onmouseover="this.style.color='#ffd700'" onmouseout="this.style.color='#9ca3af'">Политика конфиденциальности</a>
+            </div>
+            &copy; 2026 YUMATRIN GAMES. Все права защищены.
+        </footer>
+
+        <div class="mobile-watermark">YUMATRIN GAMES</div>
+    </div>
+
+    <!-- МОДАЛКИ -->
+    <div class="modal-overlay" id="dlModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('dlModal')">&times;</span>
+            <h3>Скачивание недоступно</h3>
+            <p>Файлы игры появятся здесь сразу после завершения тестирования и открытия первого сервера. Ожидайте!</p>
+            <button class="btn-primary" onclick="closeModal('dlModal')">ОК</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="donateModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('donateModal')">&times;</span>
+            <h3>Платежи отключены</h3>
+            <p>На данный момент функция доната находится в разработке. Мы подключим платежные системы ближе к релизу.</p>
+            <button class="btn-primary" onclick="closeModal('donateModal')">ОК</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="regModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('regModal')">&times;</span>
+            <h3>Регистрация закрыта</h3>
+            <p>Сервера еще не запущены. Следите за новостями в наших социальных сетях, чтобы не пропустить старт!</p>
+            <button class="btn-primary" onclick="closeModal('regModal')">ОК</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="ytModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('ytModal')">&times;</span>
+            <h3>YouTube</h3>
+            <p>Наш YouTube канал находится в стадии разработки. Мы скоро начнем публиковать там видео о проекте!</p>
+            <button class="btn-primary" onclick="closeModal('ytModal')">ОК</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
